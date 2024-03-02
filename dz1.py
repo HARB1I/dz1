@@ -6,12 +6,10 @@
 nums = {'0':"ноль",'1':'один','2':"два",
         '3':"три",'4':"четыре",'5':"пять",
         '6':"шесть",'7':"семь", '-':"минус"}
-k = input("введите число k: ")
-k = int(k)
+k = int(input("введите число k: "))
 max_num = 4096
 buf_len = 1
-max_num_oct = int(oct(max_num)[2:])
-num_list = []                                                             
+max_num_oct = int(oct(max_num)[2:])                                                            
 work_buffer = ""
 with open("text.txt","r") as file:
       buffer = file.read(buf_len)                                    
@@ -26,11 +24,8 @@ with open("text.txt","r") as file:
              if abs(int(work_buffer)) <= max_num_oct and abs(int(work_buffer)) % 2 == 1 and len(str(abs(int(work_buffer)))) % 2 == 0 and len(str(work_buffer)) > k:
                 print(work_buffer)
                 for x in str(work_buffer): 
-                    num_list.append(x)
-                for o in num_list:
-                    print(nums[str(o)], end = " ")
+                    print(nums[str(x)], end = " ")
                 print(" ")
-                num_list = []
            work_buffer = ''
            buffer = file.read(buf_len)
               

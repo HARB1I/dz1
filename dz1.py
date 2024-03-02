@@ -11,13 +11,12 @@ k = int(k)
 max_num = 4096
 buf_len = 1
 max_num_oct = int(oct(max_num)[2:])
-num_list = []
-file_nums = []                                                             
+num_list = []                                                             
 work_buffer = ""
 with open("text.txt","r") as file:
       buffer = file.read(buf_len)                                    
       while buffer:                                                       
-           while buffer >= '0' and buffer <= '7':                                                            
+           while abs(int(buffer)) >= 0 and abs(int(buffer)) <= 7:                                                            
               work_buffer += buffer
               buffer = file.read(buf_len)
            if len(work_buffer) > 0:

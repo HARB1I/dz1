@@ -20,9 +20,7 @@ with open("text.txt","r") as file:
            while buffer >= '0' and buffer <= '7':                                                            
               work_buffer += buffer
               buffer = file.read(buf_len)
-           if len(work_buffer) > 0:
-             if abs(int(work_buffer)) <= max_num_oct and abs(int(work_buffer)) % 2 == 1 and len(str(abs(int(work_buffer)))) % 2 == 0 and len(str(work_buffer)) > k:
-                print(work_buffer)
+           if len(work_buffer) > 0 and abs(int(work_buffer)) <= max_num_oct and abs(int(work_buffer)) % 2 == 1 and len(str(abs(int(work_buffer)))) % 2 == 0 and len(str(work_buffer)) > k:
                 for x in str(work_buffer): 
                     print(nums[str(x)], end = " ")
                 print(" ")
